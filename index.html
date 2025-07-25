@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HotelEase - A premium hotel booking and management system prototype by Your Name">
+    <title>HotelEase – Luxury Hotel Booking (Frontend Prototype) | Your Name</title>
+
+    <!-- Preload critical resources -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        as="font" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Header/Navigation -->
+    <!-- Premium Header -->
+    <header
+        style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(15, 15, 15, 0.96); padding: 0.75rem 0; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(224, 169, 109, 0.12); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16); transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);">
+        <div
+            style="max-width: 1320px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center;">
+
+            <!-- Logo with perfect proportions -->
+            <a href="/" class="luxury-logo"
+                style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: #e0a96d; text-decoration: none; letter-spacing: 0.5px; line-height: 1; padding: 0.5rem 0;">
+                <span style="display: inline-block; transition: transform 0.4s ease; position: relative;">
+                    Hotel<span
+                        style="font-weight: 400; color: rgba(255,255,255,0.92); margin-left: 0.15rem;">Ease</span>
+                    <span class="logo-underline"
+                        style="position: absolute; bottom: -0.25rem; left: 0; width: 100%; height: 1px; background: #e0a96d; transform: scaleX(0); transform-origin: right; transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);"></span>
+                </span>
+            </a>
+
+            <!-- Perfectly sized mobile toggle -->
+            <button id="mobileMenuToggle" aria-label="Toggle navigation menu"
+                style="display: none; background: none; border: none; cursor: pointer; padding: 0.75rem; z-index: 1001; transition: transform 0.3s ease;">
+                <div class="hamburger" style="width: 1.75rem; height: 1.25rem; position: relative;">
+                    <span
+                        style="display: block; position: absolute; height: 2px; width: 100%; background: #e0a96d; border-radius: 1px; left: 0; transition: all 0.3s ease; top: 0;"></span>
+                    <span
+                        style="display: block; position: absolute; height: 2px; width: 100%; background: #e0a96d; border-radius: 1px; left: 0; transition: all 0.3s ease; top: 0.625rem; opacity: 1;"></span>
+                    <span
+                        style="display: block; position: absolute; height: 2px; width: 100%; background: #e0a96d; border-radius: 1px; left: 0; transition: all 0.3s ease; top: 1.25rem;"></span>
+                </div>
+            </button>
+
+            <!-- Navigation with ideal spacing -->
+            <nav id="mainNav" aria-label="Main navigation" style="display: flex; align-items: center; gap: 2.5rem;">
+                <div class="nav-links" style="display: flex; gap: 1.75rem;">
+                    <a href="#home" class="nav-link"
+                        style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 500; letter-spacing: 0.3px; padding: 0.5rem 0; position: relative;">
+                        <span
+                            style="display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.75" style="transition: all 0.3s ease;">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            <span>Home</span>
+                        </span>
+                        <span class="nav-underline"
+                            style="position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #e0a96d; transition: width 0.4s cubic-bezier(0.33, 1, 0.68, 1);"></span>
+                    </a>
+                    <!-- Repeat similar structure for other nav items -->
+                    <a href="#rooms" class="nav-link"
+                        style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 500; letter-spacing: 0.3px; padding: 0.5rem 0; position: relative;">
+                        <span
+                            style="display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.75" style="transition: all 0.3s ease;">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <path d="M2 10h20M2 14h20"></path>
+                            </svg>
+                            <span>Suites</span>
+                        </span>
+                        <span class="nav-underline"
+                            style="position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #e0a96d; transition: width 0.4s cubic-bezier(0.33, 1, 0.68, 1);"></span>
+                    </a>
+                    <a href="#dining" class="nav-link"
+                        style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 500; letter-spacing: 0.3px; padding: 0.5rem 0; position: relative;">
+                        <span
+                            style="display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.75" style="transition: all 0.3s ease;">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                <line x1="6" y1="1" x2="6" y2="4"></line>
+                                <line x1="10" y1="1" x2="10" y2="4"></line>
+                                <line x1="14" y1="1" x2="14" y2="4"></line>
+                            </svg>
+                            <span>Dining</span>
+                        </span>
+                        <span class="nav-underline"
+                            style="position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #e0a96d; transition: width 0.4s cubic-bezier(0.33, 1, 0.68, 1);"></span>
+                    </a>
+                    <a href="#experiences" class="nav-link"
+                        style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 500; letter-spacing: 0.3px; padding: 0.5rem 0; position: relative;">
+                        <span
+                            style="display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.75" style="transition: all 0.3s ease;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M16 12l-4-4-4 4M12 16V8"></path>
+                            </svg>
+                            <span>Experiences</span>
+                        </span>
+                        <span class="nav-underline"
+                            style="position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #e0a96d; transition: width 0.4s cubic-bezier(0.33, 1, 0.68, 1);"></span>
+                    </a>
+                    <a href="#gallery" class="nav-link"
+                        style="font-family: 'Montserrat', sans-serif; font-size: 0.95rem; color: rgba(255,255,255,0.92); text-decoration: none; font-weight: 500; letter-spacing: 0.3px; padding: 0.5rem 0; position: relative;">
+                        <span
+                            style="display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.75" style="transition: all 0.3s ease;">
+                                <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            <span>Gallery</span>
+                        </span>
+                        <span class="nav-underline"
+                            style="position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: #e0a96d; transition: width 0.4s cubic-bezier(0.33, 1, 0.68, 1);"></span>
+                    </a>
+                </div>
+
+                <!-- Action buttons with perfect spacing -->
+                <div class="nav-actions" style="display: flex; align-items: center; gap: 1.25rem; margin-left: 1.5rem;">
+                    <a href="#book" class="book-now-btn"
+                        style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; background: linear-gradient(135deg, #e0a96d, #d39b5f); color: #1a1a1a; text-decoration: none; font-weight: 600; letter-spacing: 0.5px; padding: 0.75rem 1.75rem; border-radius: 2rem; transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1); box-shadow: 0 4px 16px rgba(224, 169, 109, 0.25);">
+                        Book Now
+                    </a>
+                    <a href="profile.html" aria-label="User profile"
+                        style="display: flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: rgba(255,255,255,0.08); transition: all 0.3s ease;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#e0a96d"
+                            style="transition: all 0.3s ease;">
+                            <path
+                                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <style>
+            /* ===== Perfectly Responsive Mobile Styles ===== */
+            @media (max-width: 1024px) {
+                #mobileMenuToggle {
+                    display: flex !important;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                #mainNav {
+                    position: fixed !important;
+                    top: 0;
+                    right: -100%;
+                    width: 85%;
+                    max-width: 320px;
+                    height: 100vh;
+                    background: rgba(15, 15, 15, 0.98);
+                    backdrop-filter: blur(16px);
+                    -webkit-backdrop-filter: blur(16px);
+                    flex-direction: column !important;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    padding: 6rem 2rem 2rem;
+                    transition: right 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+                    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.2);
+                    border-left: 1px solid rgba(224, 169, 109, 0.1);
+                }
+
+                #mainNav.active {
+                    right: 0;
+                }
+
+                .nav-links {
+                    flex-direction: column !important;
+                    width: 100%;
+                    gap: 1.5rem !important;
+                }
+
+                .nav-actions {
+                    margin-left: 0 !important;
+                    margin-top: 2.5rem;
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                    gap: 1.5rem !important;
+                    width: 100%;
+                }
+
+                .book-now-btn {
+                    width: 100%;
+                    text-align: center;
+                    padding: 0.9rem !important;
+                }
+
+                /* Hamburger animation */
+                #mobileMenuToggle.active .hamburger span:nth-child(1) {
+                    top: 0.625rem;
+                    transform: rotate(45deg);
+                }
+
+                #mobileMenuToggle.active .hamburger span:nth-child(2) {
+                    opacity: 0;
+                }
+
+                #mobileMenuToggle.active .hamburger span:nth-child(3) {
+                    top: 0.625rem;
+                    transform: rotate(-45deg);
+                }
+
+                /* Staggered nav link animations */
+                .nav-link {
+                    opacity: 0;
+                    transform: translateX(1rem);
+                    transition: all 0.4s ease;
+                }
+
+                #mainNav.active .nav-link {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+
+                #mainNav.active .nav-link:nth-child(1) {
+                    transition-delay: 0.1s;
+                }
+
+                #mainNav.active .nav-link:nth-child(2) {
+                    transition-delay: 0.15s;
+                }
+
+                #mainNav.active .nav-link:nth-child(3) {
+                    transition-delay: 0.2s;
+                }
+
+                #mainNav.active .nav-link:nth-child(4) {
+                    transition-delay: 0.25s;
+                }
+
+                #mainNav.active .nav-link:nth-child(5) {
+                    transition-delay: 0.3s;
+                }
+
+                /* Prevent scrolling when menu is open */
+                body.menu-open {
+                    overflow: hidden;
+                }
+            }
+
+            /* ===== Exquisite Hover Effects ===== */
+            .luxury-logo:hover span {
+                transform: translateY(-2px);
+            }
+
+            .luxury-logo:hover .logo-underline {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
+
+            .nav-link:hover {
+                color: #e0a96d !important;
+            }
+
+            .nav-link:hover svg {
+                stroke: #e0a96d;
+                transform: translateY(-2px);
+            }
+
+            .nav-link:hover .nav-underline {
+                width: 100%;
+            }
+
+            .book-now-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(224, 169, 109, 0.35);
+            }
+
+            a[aria-label="User profile"]:hover {
+                background: rgba(224, 169, 109, 0.15) !important;
+                transform: scale(1.08);
+            }
+
+            a[aria-label="User profile"]:hover svg {
+                transform: scale(1.1);
+            }
+
+            /* Header scroll effect */
+            header.scrolled {
+                padding: 0.5rem 0 !important;
+                background: rgba(15, 15, 15, 0.98) !important;
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+                const mainNav = document.getElementById('mainNav');
+                const body = document.body;
+                const header = document.querySelector('header');
+
+                // Mobile Menu Toggle
+                mobileMenuToggle.addEventListener('click', function () {
+                    this.classList.toggle('active');
+                    mainNav.classList.toggle('active');
+                    body.classList.toggle('menu-open');
+                    this.setAttribute('aria-expanded', this.classList.contains('active'));
+                });
+
+                // Close menu when clicking links
+                document.querySelectorAll('#mainNav a').forEach(link => {
+                    link.addEventListener('click', function () {
+                        if (window.innerWidth <= 1024) {
+                            mobileMenuToggle.classList.remove('active');
+                            mainNav.classList.remove('active');
+                            body.classList.remove('menu-open');
+                            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                });
+
+                // Header scroll effect
+                window.addEventListener('scroll', function () {
+                    header.classList.toggle('scrolled', window.scrollY > 20);
+                });
+
+                // Responsive behavior
+                function handleResponsive() {
+                    if (window.innerWidth <= 1024) {
+                        mobileMenuToggle.style.display = 'flex';
+                    } else {
+                        mobileMenuToggle.style.display = 'none';
+                        mainNav.classList.remove('active');
+                        mobileMenuToggle.classList.remove('active');
+                        body.classList.remove('menu-open');
+                    }
+                }
+
+                // Initial check
+                handleResponsive();
+
+                // Update on resize
+                window.addEventListener('resize', handleResponsive);
+            });
+        </script>
+    </header>
+    <!-- Ultra-Premium Hero Section -->
+    <section class="luxury-hero" aria-labelledby="hero-heading">
+        <div class="luxury-hero-video" aria-hidden="true">
+            <video autoplay muted loop playsinline>
+                <source src="hero1vid.mp4" type="video/mp4">
+                <!-- Fallback image -->
+                <img src="hotel-lobby-fallback.jpg" alt="Luxury hotel lobby">
+            </video>
+        </div>
+        <div class="luxury-hero-overlay"></div>
+
+        <div class="container">
+            <div class="luxury-hero-content">
+                <div class="luxury-hero-text">
+                    <p class="luxury-hero-pretitle">World Class Hospitality</p>
+                    <h1 id="hero-heading">Where Timeless Elegance Meets Modern Luxury</h1>
+                    <p class="luxury-hero-subtitle">Experience the pinnacle of comfort with our award-winning service
+                        and breathtaking accommodations</p>
+                </div>
+
+                <div class="luxury-hero-cta">
+                    <a href="#rooms" class="luxury-cta-btn luxury-cta-primary">
+                        <span>Explore Suites</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#book" class="luxury-cta-btn luxury-cta-secondary">
+                        <span>Book Exclusive Offer</span>
+                    </a>
+                </div>
+<!-- 
+                <div class="luxury-hero-scroll">
+                    <span>Scroll to Discover</span>
+                    <div class="luxury-scroll-indicator"></div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Rooms Section -->
+        <section id="rooms" class="section rooms-section" aria-labelledby="rooms-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="rooms-heading" style="color: white;">Our Accommodations</h2>
+                    <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.662);">Choose from our diverse range
+                        of luxurious rooms and suites tailored to
+                        your needs</p>
+                </header>
+
+                <!-- Floor Navigation -->
+                <nav class="floor-nav" aria-label="Room floors">
+                    <ul class="floor-tabs" role="tablist">
+                        <li role="presentation">
+                            <button class="floor-tab active" id="floor-1-tab" role="tab" aria-controls="floor-1"
+                                aria-selected="true">First Floor</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="floor-tab" id="floor-2-tab" role="tab" aria-controls="floor-2"
+                                tabindex="-1">Second Floor</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="floor-tab" id="floor-3-tab" role="tab" aria-controls="floor-3"
+                                tabindex="-1">Third Floor</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="floor-tab" id="floor-4-tab" role="tab" aria-controls="floor-4"
+                                tabindex="-1">Penthouse</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Floor Rooms -->
+                <div class="tab-content">
+                    <!-- Floor 1 -->
+                    <section id="floor-1" class="floor-content active" role="tabpanel" aria-labelledby="floor-1-tab"
+                        tabindex="0">
+                        <h3 class="visually-hidden" style="color: rgba(255, 255, 255, 0.66);">First Floor Rooms</h3>
+                        <div class="room-grid">
+                            <!-- Room Card 1 -->
+                            <article class="room-card" aria-labelledby="room-1-title">
+                                <div class="room-card-media">
+                                    <img src="hot1.jpg" alt="Deluxe room with king bed and ocean view" loading="lazy"
+                                        width="400" height="267">
+                                    <span class="room-badge">Most Popular</span>
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-1-title">Deluxe Ocean View</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>45 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Ocean view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                                            </svg><span>King bed</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦25,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="DLX-101"
+                                            aria-label="Book Deluxe Ocean View room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Room Card 2 -->
+                            <article class="room-card" aria-labelledby="room-2-title">
+                                <div class="room-card-media">
+                                    <img src="hot3.jpg" alt="Executive suite with sitting area" loading="lazy"
+                                        width="400" height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-2-title">Executive Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>65 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z" />
+                                            </svg><span>Lounge access</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M4 6h16v2H4zm2-4h12v2H6zm14 8H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm0 10H4v-8h16v8zm-10-7.27v6.53L16 16z" />
+                                            </svg><span>Separate living area</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦35,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="EXC-102"
+                                            aria-label="Book Executive Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Room Card 3 -->
+                            <article class="room-card" aria-labelledby="room-3-title">
+                                <div class="room-card-media">
+                                    <img src="hot4.jpg" alt="Family room with two queen beds" loading="lazy" width="400"
+                                        height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-3-title">Family Room</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>55 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M16 4v2h4v2h-2v10H6V8H4V6h4V4h8zm-2 2h-4v2H8v8h8V8h-2V6z" />
+                                            </svg><span>2 Queen beds</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10v2H7z" />
+                                            </svg><span>Kids amenities</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦30,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="FAM-103"
+                                            aria-label="Book Family Room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Room Card 10 -->
+                            <article class="room-card" aria-labelledby="room-10-title">
+                                <div class="room-card-media">
+                                    <img src="hot6.jpg" alt="Standard room with city view" loading="lazy" width="400"
+                                        height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-10-title">Standard Room</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>40 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                            </svg><span>City view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                                            </svg><span>Queen bed</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦20,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="STD-104"
+                                            aria-label="Book Standard Room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Room Card 14 -->
+                            <article class="room-card" aria-labelledby="room-14-title">
+                                <div class="room-card-media">
+                                    <img src="hot5.jpg" alt="Cozy retreat room with garden view" loading="lazy"
+                                        width="400" height="267">
+                                    <span class="room-badge">Budget Friendly</span>
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-14-title">Cozy Retreat</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>35 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Garden view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                                            </svg><span>Double bed</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦18,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="COZ-105"
+                                            aria-label="Book Cozy Retreat room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Room Card 15 -->
+                            <article class="room-card" aria-labelledby="room-15-title">
+                                <div class="room-card-media">
+                                    <img src="hot7.jpg" alt="Superior room with city skyline view" loading="lazy"
+                                        width="400" height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-15-title">Superior Room</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>48 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                            </svg><span>City skyline view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                                            </svg><span>King bed</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦24,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="SUP-106"
+                                            aria-label="Book Superior Room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Floor 2 -->
+                    <section id="floor-2" class="floor-content" role="tabpanel" aria-labelledby="floor-2-tab"
+                        tabindex="0" hidden>
+                        <h3 class="visually-hidden" style="color: rgba(255, 255, 255, 0.66);">Second Floor Rooms</h3>
+                        <div class="room-grid">
+                            <!-- Room Card 4 -->
+                            <article class="room-card" aria-labelledby="room-4-title">
+                                <div class="room-card-media">
+                                    <img src="hot5.jpg" alt="Junior suite with city view" loading="lazy" width="400"
+                                        height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-4-title">Junior Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>50 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                            </svg><span>City view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z" />
+                                            </svg><span>Work desk</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦28,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="JSU-201"
+                                            aria-label="Book Junior Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Room Card 5 -->
+                            <article class="room-card" aria-labelledby="room-5-title">
+                                <div class="room-card-media">
+                                    <img src="hot4.jpg" alt="Accessible room with wide doors" loading="lazy" width="400"
+                                        height="267">
+                                    <span class="room-badge">Accessible</span>
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-5-title">Accessible Deluxe</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>48 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 13.5v-7a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5z" />
+                                            </svg><span>ADA compliant</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Roll-in shower</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦27,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="ACC-202"
+                                            aria-label="Book Accessible Deluxe room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Room Card 11 -->
+                            <article class="room-card" aria-labelledby="room-11-title">
+                                <div class="room-card-media">
+                                    <img src="hot3.jpg" alt="Twin room with two single beds" loading="lazy" width="400"
+                                        height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-11-title">Twin Room</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>42 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                            </svg><span>City view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M16 4v2h4v2h-2v10H6V8H4V6h4V4h8zm-2 2h-4v2H8v8h8V8h-2V6z" />
+                                            </svg><span>2 Single beds</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦22,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="TWN-203"
+                                            aria-label="Book Twin Room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Room Card 16 -->
+                            <article class="room-card" aria-labelledby="room-16-title">
+                                <div class="room-card-media">
+                                    <img src="hot7.jpg" alt="Studio suite with kitchenette" loading="lazy" width="400"
+                                        height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-16-title">Studio Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>52 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                            </svg><span>City view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M4 6h16v2H4zm2-4h12v2H6zm14 8H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm0 10H4v-8h16v8zm-10-7.27v6.53L16 16z" />
+                                            </svg><span>Kitchenette</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦30,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="STU-204"
+                                            aria-label="Book Studio Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Room Card 17 -->
+                            <article class="room-card" aria-labelledby="room-17-title">
+                                <div class="room-card-media">
+                                    <img src="hot1.jpg" alt="Deluxe twin room with garden view" loading="lazy"
+                                        width="400" height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-17-title">Deluxe Twin</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>46 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Garden view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M16 4v2h4v2h-2v10H6V8H4V6h4V4h8zm-2 2h-4v2H8v8h8V8h-2V6z" />
+                                            </svg><span>2 Single beds</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦23,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="DTW-205"
+                                            aria-label="Book Deluxe Twin room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Floor 3 -->
+                    <section id="floor-3" class="floor-content" role="tabpanel" aria-labelledby="floor-3-tab"
+                        tabindex="0" hidden>
+                        <h3 class="visually-hidden" style="color: rgba(255, 255, 255, 0.66);">Third Floor Rooms</h3>
+                        <div class="room-grid">
+                            <!-- Room Card 6 -->
+                            <article class="room-card" aria-labelledby="room-6-title">
+                                <div class="room-card-media">
+                                    <img src="hot3.jpg" alt="Business suite with meeting area" loading="lazy"
+                                        width="400" height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-6-title">Business Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>60 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
+                                            </svg><span>Meeting area</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                                            </svg><span>King bed</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦38,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="BUS-301"
+                                            aria-label="Book Business Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Room Card 7 -->
+                            <article class="room-card" aria-labelledby="room-7-title">
+                                <div class="room-card-media">
+                                    <img src="hot6.jpg" alt="Premium room with ocean view" loading="lazy" width="400"
+                                        height="267">
+                                    <span class="room-badge">New</span>
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-7-title">Premium Ocean View</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>50 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Ocean view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z" />
+                                            </svg><span>Lounge access</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦32,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="PRM-302"
+                                            aria-label="Book Premium Ocean View room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Room Card 12 -->
+                            <article class="room-card" aria-labelledby="room-12-title">
+                                <div class="room-card-media">
+                                    <img src="hot1.jpg" alt="City suite with panoramic view" loading="lazy" width="400"
+                                        height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-12-title">City Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>70 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                            </svg><span>Panoramic city view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M4 6h16v2H4zm2-4h12v2H6zm14 8H4c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm0 10H4v-8h16v8zm-10-7.27v6.53L16 16z" />
+                                            </svg><span>Private balcony</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦40,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="CIT-303"
+                                            aria-label="Book City Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Room Card 18 -->
+                            <article class="room-card" aria-labelledby="room-18-title">
+                                <div class="room-card-media">
+                                    <img src="hot5.jpg" alt="Executive garden suite with patio" loading="lazy"
+                                        width="400" height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-18-title">Executive Garden Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>68 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Garden patio</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z" />
+                                            </svg><span>Lounge access</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦37,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="EGS-304"
+                                            aria-label="Book Executive Garden Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Room Card 19 -->
+                            <article class="room-card" aria-labelledby="room-19-title">
+                                <div class="room-card-media">
+                                    <img src="hot4.jpg" alt="Premium twin room with city view" loading="lazy"
+                                        width="400" height="267">
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-19-title">Premium Twin</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>47 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                            </svg><span>City view</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M16 4v2h4v2h-2v10H6V8H4V6h4V4h8zm-2 2h-4v2H8v8h8V8h-2V6z" />
+                                            </svg><span>2 Single beds</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦25,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="PTW-305"
+                                            aria-label="Book Premium Twin room">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Floor 4 (Penthouse) -->
+                    <section id="floor-4" class="floor-content" role="tabpanel" aria-labelledby="floor-4-tab"
+                        tabindex="0" hidden>
+                        <h3 class="visually-hidden" style="color: rgba(255, 255, 255, 0.66);">Penthouse Rooms</h3>
+                        <div class="room-grid">
+                            <!-- Room Card 8 -->
+                            <article class="room-card" aria-labelledby="room-8-title">
+                                <div class="room-card-media">
+                                    <img src="hot1.jpg" alt="Presidential suite with private terrace" loading="lazy"
+                                        width="400" height="267">
+                                    <span class="room-badge">Exclusive</span>
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-8-title">Presidential Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>120 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Private terrace</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z" />
+                                            </svg><span>Butler service</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦80,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="PRE-401"
+                                            aria-label="Book Presidential Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Room Card 9 -->
+                            <article class="room-card" aria-labelledby="room-9-title">
+                                <div class="room-card-media">
+                                    <img src="hot3.jpg" alt="Penthouse suite with jacuzzi" loading="lazy" width="400"
+                                        height="267">
+                                    <span class="room-badge">Luxury</span>
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-9-title">Penthouse Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>100 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Jacuzzi</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z" />
+                                            </svg><span>Lounge access</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦65,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="PNT-402"
+                                            aria-label="Book Penthouse Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Room Card 20 -->
+                            <article class="room-card" aria-labelledby="room-20-title">
+                                <div class="room-card-media">
+                                    <img src="hot4.jpg" alt="Grand suite with private lounge" loading="lazy" width="400"
+                                        height="267">
+                                    <span class="room-badge">Exclusive</span>
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-20-title">Grand Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>110 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Private lounge</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                                            </svg><span>King bed</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦75,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="GRD-403"
+                                            aria-label="Book Grand Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Room Card 21 -->
+                            <article class="room-card" aria-labelledby="room-21-title">
+                                <div class="room-card-media">
+                                    <img src="hot5.jpg" alt="Elite suite with rooftop access" loading="lazy" width="400"
+                                        height="267">
+                                    <span class="room-badge">Premium</span>
+                                </div>
+                                <div class="room-card-content">
+                                    <h3 id="room-21-title">Elite Suite</h3>
+                                    <ul class="room-features">
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M6 6h12v12H6z" />
+                                            </svg><span>95 sqm</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path d="M12 3L1 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                                            </svg><span>Rooftop access</span></li>
+                                        <li><svg class="feature-icon" aria-hidden="true" width="20" height="20"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M3 5v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2zm12 4c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3zm-9 8c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1H6v-1z" />
+                                            </svg><span>Butler service</span></li>
+                                    </ul>
+                                    <div class="room-card-footer">
+                                        <p class="room-price"><span class="price-amount">₦70,000</span><span
+                                                class="price-duration">/ night</span></p>
+                                        <button class="btn btn-book" data-room-id="ELT-404"
+                                            aria-label="Book Elite Suite">Book Now</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+
+        <!-- Dining Section -->
+        <section id="dining" class="section dining-section" aria-labelledby="dining-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="dining-heading">Dining Options</h2>
+                    <p class="section-subtitle">Explore our exquisite dining and beverage offerings</p>
+                </header>
+
+                <!-- Dining Navigation -->
+                <nav class="dining-nav" aria-label="Dining categories">
+                    <ul class="dining-tabs" role="tablist">
+                        <li role="presentation">
+                            <button class="dining-tab active" id="breakfast-tab" role="tab" aria-controls="breakfast"
+                                aria-selected="true">
+                                <i class="fas fa-egg"></i> Breakfast
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="dining-tab" id="main-courses-tab" role="tab" aria-controls="main-courses"
+                                tabindex="-1">
+                                <i class="fas fa-utensils"></i> Main Courses
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="dining-tab" id="desserts-tab" role="tab" aria-controls="desserts"
+                                tabindex="-1">
+                                <i class="fas fa-ice-cream"></i> Desserts
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="dining-tab" id="cocktails-tab" role="tab" aria-controls="cocktails"
+                                tabindex="-1">
+                                <i class="fas fa-cocktail"></i> Cocktails
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="dining-tab" id="non-alcoholic-tab" role="tab" aria-controls="non-alcoholic"
+                                tabindex="-1">
+                                <i class="fas fa-glass-whiskey"></i> Non-Alcoholic
+                            </button>
+                        </li>
+                        <li role="presentation">
+                            <button class="dining-tab" id="souvenirs-tab" role="tab" aria-controls="souvenirs"
+                                tabindex="-1">
+                                <i class="fas fa-gift"></i> Souvenirs
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Dining Content -->
+                <div class="tab-content">
+                    <!-- Breakfast -->
+                    <section id="breakfast" class="dining-content active" role="tabpanel"
+                        aria-labelledby="breakfast-tab" tabindex="0">
+                        <h3 class="visually-hidden">Breakfast Menu</h3>
+                        <div class="menu-grid">
+                            <!-- Menu Item 1 -->
+                            <article class="menu-card" aria-labelledby="menu-bf101-title">
+                                <div class="menu-card-media">
+                                    <img src="paster.jpg" alt="Continental breakfast with croissants and coffee"
+                                        loading="lazy" width="300" height="200">
+                                    <span class="menu-badge">Popular</span>
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-bf101-title">Continental Breakfast</h3>
+                                    <p class="menu-description">Freshly baked croissants, pastries, seasonal fruits, and
+                                        coffee or tea.</p>
+                                    <ul class="menu-tags">
+                                        <li>Vegetarian</li>
+                                        <li>Light</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦3,500</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="BF101"
+                                            aria-label="Add Continental Breakfast to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 2 -->
+                            <article class="menu-card" aria-labelledby="menu-bf102-title">
+                                <div class="menu-card-media">
+                                    <img src="yam.jpg" alt="African breakfast with yam and stew" loading="lazy"
+                                        width="300" height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-bf102-title">African Breakfast</h3>
+                                    <p class="menu-description">Boiled yam with spicy vegetable stew and a side of fried
+                                        plantain.</p>
+                                    <ul class="menu-tags">
+                                        <li>Local</li>
+                                        <li>Spicy</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦4,000</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="BF102"
+                                            aria-label="Add African Breakfast to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 3 -->
+                            <article class="menu-card" aria-labelledby="menu-bf103-title">
+                                <div class="menu-card-media">
+                                    <img src="fruit.jpg" alt="Fresh fruit platter with yogurt" loading="lazy"
+                                        width="300" height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-bf103-title">Fruit Platter</h3>
+                                    <p class="menu-description">Assorted tropical fruits with Greek yogurt and honey
+                                        drizzle.</p>
+                                    <ul class="menu-tags">
+                                        <li>Healthy</li>
+                                        <li>Vegetarian</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦3,000</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="BF103"
+                                            aria-label="Add Fruit Platter to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Menu Item 4 -->
+                            <article class="menu-card" aria-labelledby="menu-bf104-title">
+                                <div class="menu-card-media">
+                                    <img src="panc.jpeg" alt="American breakfast with pancakes and bacon" loading="lazy"
+                                        width="300" height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-bf104-title">American Breakfast</h3>
+                                    <p class="menu-description">Fluffy pancakes, crispy bacon, scrambled eggs, and maple
+                                        syrup.</p>
+                                    <ul class="menu-tags">
+                                        <li>Classic</li>
+                                        <li>Hearty</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦4,700</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="BF104"
+                                            aria-label="Add American Breakfast to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- New Menu Item 5 -->
+                            <article class="menu-card" aria-labelledby="menu-bf105-title">
+                                <div class="menu-card-media">
+                                    <img src="vegan.jpg" alt="Vegan smoothie bowl with granola" loading="lazy"
+                                        width="300" height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-bf105-title">Vegan Smoothie Bowl</h3>
+                                    <p class="menu-description">Blended tropical fruits topped with granola, chia seeds,
+                                        and coconut flakes.</p>
+                                    <ul class="menu-tags">
+                                        <li>Vegan</li>
+                                        <li>Healthy</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦3,500</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="BF105"
+                                            aria-label="Add Vegan Smoothie Bowl to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Main Courses (Continued) -->
+                    <section id="main-courses" class="dining-content" role="tabpanel" aria-labelledby="main-courses-tab"
+                        tabindex="0" hidden>
+                        <h3 class="visually-hidden">Main Courses Menu</h3>
+                        <div class="menu-grid">
+                            <!-- Menu Item 4 -->
+                            <article class="menu-card" aria-labelledby="menu-mc201-title">
+                                <div class="menu-card-media">
+                                    <img src="jollof.webp" alt="Jollof rice with grilled chicken" loading="lazy"
+                                        width="300" height="200">
+                                    <span class="menu-badge">Signature</span>
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-mc201-title">Jollof Rice & Chicken</h3>
+                                    <p class="menu-description">Spicy Nigerian jollof rice served with succulent grilled
+                                        chicken.</p>
+                                    <ul class="menu-tags">
+                                        <li>Local</li>
+                                        <li>Spicy</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦5,500</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="MC201"
+                                            aria-label="Add Jollof Rice & Chicken to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 5 -->
+                            <article class="menu-card" aria-labelledby="menu-mc202-title">
+                                <div class="menu-card-media">
+                                    <img src="egusi.jpg" alt="Egusi stew with pounded yam" loading="lazy" width="300"
+                                        height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-mc202-title">Egusi Stew & Pounded Yam</h3>
+                                    <p class="menu-description">Rich egusi stew with spinach, served with smooth pounded
+                                        yam.</p>
+                                    <ul class="menu-tags">
+                                        <li>Local</li>
+                                        <li>Traditional</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦5,000</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="MC202"
+                                            aria-label="Add Egusi Stew & Pounded Yam to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 6 -->
+                            <article class="menu-card" aria-labelledby="menu-mc203-title">
+                                <div class="menu-card-media">
+                                    <img src="fish.webp" alt="Grilled fish with vegetable sauce" loading="lazy"
+                                        width="300" height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-mc203-title">Grilled Fish</h3>
+                                    <p class="menu-description">Freshly grilled tilapia with a side of spicy vegetable
+                                        sauce.</p>
+                                    <ul class="menu-tags">
+                                        <li>Seafood</li>
+                                        <li>Spicy</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦6,000</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="MC203"
+                                            aria-label="Add Grilled Fish to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 7 -->
+                            <article class="menu-card" aria-labelledby="menu-mc204-title">
+                                <div class="menu-card-media">
+                                    <img src="cipas.webp" alt="Creamy chicken pasta" loading="lazy" width="300"
+                                        height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-mc204-title">Creamy Chicken Pasta</h3>
+                                    <p class="menu-description">Penne pasta in a creamy Alfredo sauce with grilled
+                                        chicken.</p>
+                                    <ul class="menu-tags">
+                                        <li>Italian</li>
+                                        <li>Rich</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦5,800</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="MC204"
+                                            aria-label="Add Creamy Chicken Pasta to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Desserts -->
+                    <section id="desserts" class="dining-content" role="tabpanel" aria-labelledby="desserts-tab"
+                        tabindex="0" hidden>
+                        <h3 class="visually-hidden">Desserts Menu</h3>
+                        <div class="menu-grid">
+                            <!-- Menu Item 8 -->
+                            <article class="menu-card" aria-labelledby="menu-ds301-title">
+                                <div class="menu-card-media">
+                                    <img src="chocake.jpg" alt="Chocolate lava cake with ice cream" loading="lazy"
+                                        width="300" height="200">
+                                    <span class="menu-badge">Indulgent</span>
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-ds301-title">Chocolate Lava Cake</h3>
+                                    <p class="menu-description">Warm chocolate cake with a molten center, served with
+                                        vanilla ice cream.</p>
+                                    <ul class="menu-tags">
+                                        <li>Vegetarian</li>
+                                        <li>Decadent</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦3,200</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="DS301"
+                                            aria-label="Add Chocolate Lava Cake to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 9 -->
+                            <article class="menu-card" aria-labelledby="menu-ds302-title">
+                                <div class="menu-card-media">
+                                    <img src="puffpuff.jpg" alt="Nigerian puff puff dessert" loading="lazy" width="300"
+                                        height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-ds302-title">Puff Puff</h3>
+                                    <p class="menu-description">Sweet, fluffy Nigerian dough balls dusted with powdered
+                                        sugar.</p>
+                                    <ul class="menu-tags">
+                                        <li>Local</li>
+                                        <li>Vegetarian</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦2,500</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="DS302"
+                                            aria-label="Add Puff Puff to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 10 -->
+                            <article class="menu-card" aria-labelledby="menu-ds303-title">
+                                <div class="menu-card-media">
+                                    <img src="tart.jpg" alt="Fresh fruit tart" loading="lazy" width="300" height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-ds303-title">Fruit Tart</h3>
+                                    <p class="menu-description">Buttery tart crust filled with custard and topped with
+                                        fresh berries.</p>
+                                    <ul class="menu-tags">
+                                        <li>Vegetarian</li>
+                                        <li>Light</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦3,000</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="DS303"
+                                            aria-label="Add Fruit Tart to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Cocktails -->
+                    <section id="cocktails" class="dining-content" role="tabpanel" aria-labelledby="cocktails-tab"
+                        tabindex="0" hidden>
+                        <h3 class="visually-hidden">Cocktails Menu</h3>
+                        <div class="menu-grid">
+                            <!-- Menu Item 11 -->
+                            <article class="menu-card" aria-labelledby="menu-ck401-title">
+                                <div class="menu-card-media">
+                                    <img src="mojito.webp" alt="Classic mojito cocktail" loading="lazy" width="300"
+                                        height="200">
+                                    <span class="menu-badge">Classic</span>
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-ck401-title">Classic Mojito</h3>
+                                    <p class="menu-description">Refreshing mix of rum, mint, lime, sugar, and soda
+                                        water.</p>
+                                    <ul class="menu-tags">
+                                        <li>Alcoholic</li>
+                                        <li>Refreshing</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦2,800</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="CK401"
+                                            aria-label="Add Classic Mojito to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 12 -->
+                            <article class="menu-card" aria-labelledby="menu-ck402-title">
+                                <div class="menu-card-media">
+                                    <img src="chapm.jpg" alt="Chapman cocktail" loading="lazy" width="300" height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-ck402-title">Chapman</h3>
+                                    <p class="menu-description">Nigerian classic with sprite, grenadine, and a splash of
+                                        bitters.</p>
+                                    <ul class="menu-tags">
+                                        <li>Local</li>
+                                        <li>Fruity</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦2,500</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="CK402"
+                                            aria-label="Add Chapman to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Non-Alcoholic -->
+                    <section id="non-alcoholic" class="dining-content" role="tabpanel"
+                        aria-labelledby="non-alcoholic-tab" tabindex="0" hidden>
+                        <h3 class="visually-hidden">Non-Alcoholic Drinks Menu</h3>
+                        <div class="menu-grid">
+                            <!-- Menu Item 13 -->
+                            <article class="menu-card" aria-labelledby="menu-na501-title">
+                                <div class="menu-card-media">
+                                    <img src="zobo.jpg" alt="Zobo hibiscus drink" loading="lazy" width="300"
+                                        height="200">
+                                    <span class="menu-badge">Local</span>
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-na501-title">Zobo Drink</h3>
+                                    <p class="menu-description">Traditional hibiscus tea with ginger and pineapple
+                                        flavors.</p>
+                                    <ul class="menu-tags">
+                                        <li>Non-Alcoholic</li>
+                                        <li>Refreshing</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦1,500</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="NA501"
+                                            aria-label="Add Zobo Drink to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 14 -->
+                            <article class="menu-card" aria-labelledby="menu-na502-title">
+                                <div class="menu-card-media">
+                                    <img src="colada.jpg" alt="Virgin pina colada" loading="lazy" width="300"
+                                        height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-na502-title">Virgin Piña Colada</h3>
+                                    <p class="menu-description">Creamy blend of pineapple juice and coconut milk.</p>
+                                    <ul class="menu-tags">
+                                        <li>Non-Alcoholic</li>
+                                        <li>Tropical</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦2,200</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="NA502"
+                                            aria-label="Add Virgin Piña Colada to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Souvenirs -->
+                    <section id="souvenirs" class="dining-content" role="tabpanel" aria-labelledby="souvenirs-tab"
+                        tabindex="0" hidden>
+                        <h3 class="visually-hidden">Souvenirs Menu</h3>
+                        <div class="menu-grid">
+                            <!-- Menu Item 15 -->
+                            <article class="menu-card" aria-labelledby="menu-sv601-title">
+                                <div class="menu-card-media">
+                                    <img src="mug.jpg" alt="HotelEase branded ceramic mug" loading="lazy" width="300"
+                                        height="200">
+                                    <span class="menu-badge">Exclusive</span>
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-sv601-title">HotelEase Mug</h3>
+                                    <p class="menu-description">Elegant ceramic mug with HotelEase logo, perfect for
+                                        home or office.</p>
+                                    <ul class="menu-tags">
+                                        <li>Branded</li>
+                                        <li>Gift</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦4,000</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="SV601"
+                                            aria-label="Add HotelEase Mug to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <!-- Menu Item 16 -->
+                            <article class="menu-card" aria-labelledby="menu-sv602-title">
+                                <div class="menu-card-media">
+                                    <img src="shirt.jpg" alt="HotelEase branded t-shirt" loading="lazy" width="300"
+                                        height="200">
+                                </div>
+                                <div class="menu-card-content">
+                                    <h3 id="menu-sv602-title">HotelEase T-Shirt</h3>
+                                    <p class="menu-description">Comfortable cotton t-shirt with HotelEase branding.</p>
+                                    <ul class="menu-tags">
+                                        <li>Branded</li>
+                                        <li>Casual</li>
+                                    </ul>
+                                    <div class="menu-card-footer">
+                                        <p class="menu-price">₦5,500</p>
+                                        <button class="btn btn-add-to-cart" data-item-id="SV602"
+                                            aria-label="Add HotelEase T-Shirt to cart">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section id="cart" class="section cart-section" aria-labelledby="cart-heading">
+            <div class="container">
+
+                <!-- Add this near your cart icon/heading -->
+                <span class="cart-counter"></span>
+
+                <header class="section-header">
+                    <h2 id="cart-heading">Your Cart</h2>
+                    <p class="section-subtitle">Review your selected items and bookings</p>
+                </header>
+                <div class="cart-content">
+                    <div class="cart-list" aria-live="polite">
+                        <p>No items in cart.</p>
+                        <!-- Dynamic content will be injected here -->
+                    </div>
+                    <div class="cart-summary">
+                        <p class="cart-total">Total: <span>₦0</span></p>
+                        <button class="btn btn-primary" aria-label="Proceed to checkout">Checkout</button>
+                    </div>
+                </div>
+
+                <!-- Add this in your cart section -->
+                <button class="btn-clear-cart">Clear Cart</button>
+
+            </div>
+        </section>
+
+        <!-- Add this in your cart section -->
+        <button class="btn-clear-cart">Clear Cart</button>
+
+        <!-- Services Section -->
+        <section id="services" class="section services-section" aria-labelledby="services-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="services-heading" style="color: white;">Our Services</h2>
+                    <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.726);">Discover the exceptional
+                        amenities and services we offer</p>
+                </header>
+                <div class="services-grid">
+                    <!-- Service Item 1 -->
+                    <article class="service-card" aria-labelledby="service-spa-title">
+                        <div class="service-card-media">
+                            <img src="spa.avif" alt="Luxury spa with massage room" loading="lazy" width="300"
+                                height="200">
+                        </div>
+                        <div class="service-card-content">
+                            <h3 id="service-spa-title">Spa & Wellness</h3>
+                            <p class="service-description">Indulge in our world-class spa with massages, facials, and
+                                wellness treatments.</p>
+                            <a href="#book-service" class="btn btn-book-service" aria-label="Book Spa Service">Book
+                                Now</a>
+                        </div>
+                    </article>
+
+                    <!-- Service Item 2 -->
+                    <article class="service-card" aria-labelledby="service-gym-title">
+                        <div class="service-card-media">
+                            <img src="fit.jpg" alt="Modern gym with fitness equipment" loading="lazy" width="300"
+                                height="200">
+                        </div>
+                        <div class="service-card-content">
+                            <h3 id="service-gym-title">Fitness Center</h3>
+                            <p class="service-description">Stay active with our state-of-the-art gym, open 24/7 for
+                                guests.</p>
+                            <a href="#book-service" class="btn btn-book-service"
+                                aria-label="Book Fitness Center Access">Book Now</a>
+                        </div>
+                    </article>
+
+                    <!-- Service Item 3 -->
+                    <article class="service-card" aria-labelledby="service-pool-title">
+                        <div class="service-card-media">
+                            <img src="pool.jpg" alt="Outdoor swimming pool with loungers" loading="lazy" width="300"
+                                height="200">
+                        </div>
+                        <div class="service-card-content">
+                            <h3 id="service-pool-title">Swimming Pool</h3>
+                            <p class="service-description">Relax by our infinity pool with stunning views and poolside
+                                service.</p>
+                            <a href="#book-service" class="btn btn-book-service" aria-label="Book Pool Access">Book
+                                Now</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card" aria-labelledby="service-pool-title">
+                        <div class="service-card-media">
+                            <img src="bar.jpg" alt="Outdoor swimming pool with loungers" loading="lazy" width="300"
+                                height="200">
+                        </div>
+                        <div class="service-card-content">
+                            <h3 id="service-pool-title">Bar</h3>
+                            <p class="service-description">Relax by our luxary Bar with stunning views and brew
+                                service.</p>
+                            <a href="#book-service" class="btn btn-book-service" aria-label="Book Pool Access">Book
+                                Now</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section gallery-section" aria-labelledby="gallery-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="gallery-heading">Gallery</h2>
+                    <p class="section-subtitle">Explore the beauty and elegance of HotelEase</p>
+                </header>
+                <div class="gallery-grid">
+                    <!-- Gallery Item 1 -->
+                    <figure class="gallery-item" aria-labelledby="gallery-1-caption">
+                        <img src="hot5.jpg" alt="HotelEase exterior at sunset" loading="lazy" width="400" height="267">
+                        <figcaption id="gallery-1-caption">HotelEase Exterior at Sunset</figcaption>
+                    </figure>
+
+                    <!-- Gallery Item 2 -->
+                    <figure class="gallery-item" aria-labelledby="gallery-2-caption">
+                        <img src="pool.jpg" alt="Luxurious hotel lobby" loading="lazy" width="400" height="267">
+                        <figcaption id="gallery-2-caption">Grand Lobby</figcaption>
+                    </figure>
+
+                    <!-- Gallery Item 3 -->
+                    <figure class="gallery-item" aria-labelledby="gallery-3-caption">
+                        <img src="bar.jpg" alt="Poolside view with loungers" loading="lazy" width="400" height="267">
+                        <figcaption id="gallery-3-caption">Poolside Serenity</figcaption>
+                    </figure>
+
+                    <!-- Gallery Item 4 -->
+                    <figure class="gallery-item" aria-labelledby="gallery-4-caption">
+                        <img src="fit.jpg" alt="Elegant dining restaurant" loading="lazy" width="400" height="267">
+                        <figcaption id="gallery-4-caption">Fine Dining Restaurant</figcaption>
+                    </figure>
+
+                    <figure class="gallery-item" aria-labelledby="gallery-1-caption">
+                        <img src="hot4.jpg" alt="HotelEase exterior at sunset" loading="lazy" width="400" height="267">
+                        <figcaption id="gallery-1-caption">HotelEase Exterior at Sunset</figcaption>
+                    </figure>
+
+                    <figure class="gallery-item" aria-labelledby="gallery-1-caption">
+                        <img src="yam.jpg" alt="HotelEase exterior at sunset" loading="lazy" width="400" height="267">
+                        <figcaption id="gallery-1-caption">HotelEase Exterior at Sunset</figcaption>
+                    </figure>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section" aria-labelledby="about-heading">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="about-heading" style="color: white;">About HotelEase</h2>
+                    <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.804);">Learn more about our vision
+                        and commitment to luxury</p>
+                </header>
+                <div class="about-content">
+                    <p style="color: rgba(255, 255, 255, 0.769);">HotelEase is a premier destination for luxury and
+                        comfort, offering world-class accommodations,
+                        dining, and services. Our mission is to provide an unforgettable experience for every guest,
+                        blending modern elegance with warm hospitality.</p>
+                    <p style="color: rgba(255, 255, 255, 0.769);">Located in the heart of the city, HotelEase combines
+                        stunning views, exceptional amenities, and
+                        personalized service to ensure your stay is nothing short of extraordinary.</p>
+                    <a href="#contact" class="btn btn-primary" aria-label="Contact us for more information">Contact
+                        Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer" aria-label="Footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="logo" aria-label="HotelEase - Return to homepage">
+                        <span class="logo-text">HotelEase</span>
+                        <span class="logo-badge">Prototype</span>
+                    </a>
+                    <p>Luxury redefined for the modern traveler.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" aria-label="Go to Home section">Home</a></li>
+                        <li><a href="#rooms" aria-label="Go to Rooms section">Rooms & Suites</a></li>
+                        <li><a href="#dining" aria-label="Go to Dining section">Dining</a></li>
+                        <li><a href="#services" aria-label="Go to Services section">Services</a></li>
+                        <li><a href="#gallery" aria-label="Go to Gallery section">Gallery</a></li>
+                        <li><a href="#about" aria-label="Go to About section">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@hoteleasy.com">info@hoteleasy.com</a></p>
+                    <p>Phone: <a href="tel:+2341234567890">+234 123 456 7890</a></p>
+                    <p>Address: 123 Luxury Lane, Lagos, Nigeria</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <ul class="social-links">
+                        <li><a href="https://x.com/hoteleasy" aria-label="Follow HotelEase on X"><svg class="icon"
+                                    aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg></a></li>
+                        <li><a href="https://facebook.com/hoteleasy" aria-label="Follow HotelEase on Facebook"><svg
+                                    class="icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8v-7h-2v-2h2v-1.5c0-2.1 1.29-3.25 3.17-3.25.9 0 1.83.16 1.83.16v2h-1.03c-1.01 0-1.33.63-1.33 1.28V12h2.25l-.36 2h-1.89v7c4.56-.93 8-4.96 8-9.8z" />
+                                </svg></a></li>
+                        <li><a href="https://instagram.com/hoteleasy" aria-label="Follow HotelEase on Instagram"><svg
+                                    class="icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.061 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.061-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.061-1.366.326-2.633 1.301-3.608.975-.975 2.242-1.24 3.608-1.301 1.266-.058 1.646-.07 4.85-.07m0-2.163C8.735 0 8.332.013 7.052.07c-1.72.078-3.276.534-4.532 1.79C1.264 3.116.808 4.672.73 6.392.672 7.672.66 8.075.66 12s.013 4.328.07 5.608c.078 1.72.534 3.276 1.79 4.532 1.256 1.256 2.812 1.712 4.532 1.79 1.28.057 1.683.07 5.608.07s4.328-.013 5.608-.07c1.72-.078 3.276-.534 4.532-1.79 1.256-1.256 1.712-2.812 1.79-4.532.057-1.28.07-1.683.07-5.608s-.013-4.328-.07-5.608c-.078-1.72-.534-3.276-1.79-4.532C20.736.534 19.18.078 17.46.02 16.18-.013 15.775 0 12 0z" />
+                                    <path
+                                        d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
+                                </svg></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HotelEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="func.js"></script>
+
+
+</html>
